@@ -37,3 +37,28 @@ FROM order_details
 GROUP BY order_id
 ORDER BY total_price DESC
 LIMIT 10;
+
+-- 7.Wyświetl wszystkie produkty posortowane po nazwie od A:
+
+SELECT product_id, product_name
+FROM products
+ORDER BY product_name;
+
+-- 8.Wyświetl last_name i hire_date pracowników dla których bird_date jest większy niż 1999-01-01:
+
+SELECT last_name, hire_date
+FROM employees
+WHERE birth_date >'1999-01-01'
+
+-- 9.Wyświetl last_name i hire_date pracowników o identyfikatorach 1, 45, 300, 500:
+
+SELECT last_name, hire_date
+FROM employees
+WHERE employee_id IN (1,45,300,500)
+
+-- 10.Wyświetl territories których nazwa zaczyna się od litery “N”:
+
+SELECT territory_id, territory_description
+FROM territories
+WHERE LEFT(territory_description, 1) = 'N'
+
